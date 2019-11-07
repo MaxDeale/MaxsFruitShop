@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(212, 192, 154);
+}
+
+/* NAVBAR */
+
+#mainNav {
+    background: #e3b04b;
+    display: flex;
+    max-width: 100%;
+}
+
+#mainNav ul {
+    display: flex;
+    justify-self: flex-end;
+    align-items: center;
+    margin-left: 700px;
+}
+
+#mainNav ul li {
+    padding: 0 44px;
+    list-style: none;
+    justify-self: center;
+}
+
+#mainNav ul li a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    color: black;
+    text-decoration: none;
+    font-family: "mclaren";
+}
+
+#mainNav ul li a:hover {
+    color: white;
+}
+
+#mainHeader {
+    display: block;
+    /* background-image: url(https://images.unsplash.com/photo-1487202212798-4f11d5c8f57d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80); */
+    background-image: url(https://images.unsplash.com/photo-1502027566796-ed21d1abd7fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: soft-light;
+}
+
+.logoContainer {
+    display: flex;
+}
+
+.logo {
+    height: 250px;
+    width: 250px;
+    border-radius: 60%;
+    align-self: center;
+    justify-self: center;
+    margin-left: 100px;
+    border-radius: 50%;
+    border: solid black 7px;
+    transition: all 1s;
+}
+
+.logo:hover {
+    height: 300px;
+    width: 300px;
+    transform: rotate(360deg);
+}
+
+/* HEADER */
+
+.welcome {
+    background: black;
+    height: 300px;
+    border-radius: 10px;
+    display: flex;
+    width: 100%;
+}
+
+.welcome h1 {
+    color: white;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    flex: 4;
+    font-family: "Slabo 27px";
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+
+
+
+.container-bg {
+    width: 70%;
+    max-width: 70%;
+    background-image: url(https://images.unsplash.com/photo-1567197420939-9d6511cdc34a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+    height: 700px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    background-blend-mode: lighten;
+    display: flex;
+    justify-items: center;
+}
+
+.container-small {
+    width: 500px;
+    background: black;
+    height: 400px;
+    justify-self: center;
+    align-self: center;
+
+}
+
+
+/* FOOTER */
+
+#mainFooter {
+    height: 300px;
+    background: #e3b04b;
+}
+
+.footerItems {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+
+.footerItems div {
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+
+}
+
+.footerItems div h1 {
+    text-align: center;
+    padding: 15px 70px;
+
+}
+
+.footerItems div i {
+    margin-left: 40%;
+    transition: all 1s;
+}
+
+.footerItems div i:hover {
+    margin-left: 40%;
+    transform: scale(1.2);
+}
+
+footer p {
+    margin-top: 50px;
+    color: white;
+    text-align: center;
+
+}
+
+/* CONTACT PAGE */
+.contactContainer {
+    background: white;
+    height: 500px;
+    padding-top: 40px;
+    text-align: center;
+    border: 10px solid black;
+    border-radius: 20px;
+}
+
+.contactIcons i {
+    color: lightseagreen;
+    padding: 30px 0;
+    margin-right: 35px;
+}
+
+.fruitCard {
+    background: #eadea6 !important;
+    color: black !important;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.fruitCard img {
+    width: 100%;
+    height: 250px;
+    border: solid 10px #e3b04b;
+    border-radius: 50%;
+}
+
+.fruitCard a {
+    width: 100%;
+    background: #e3b04b;
+    color: black;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+
+.fruitCard a:hover {
+    width: 100%;
+    background: darkgrey;
+    color: white;
+    border: none;
+}
