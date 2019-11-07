@@ -8,6 +8,7 @@ body {
     background: rgb(212, 192, 154);
 }
 
+
 /* NAVBAR */
 
 #mainNav {
@@ -184,6 +185,7 @@ footer p {
     color: black !important;
     text-align: center;
     padding: 0.5rem;
+
 }
 
 .fruitCard img {
@@ -208,4 +210,15 @@ footer p {
     background: darkgrey;
     color: white;
     border: none;
+}
+
+form button {
+    background: black !important;
+    border: none !important;
+    width: 100%;
+
+}
+
+form button:hover {
+    background: lightseagreen !important;
 }
