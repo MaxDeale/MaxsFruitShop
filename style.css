@@ -21,7 +21,7 @@ body {
     display: flex;
     justify-self: flex-end;
     align-items: center;
-    margin-left: 700px;
+    margin-left: 200px;
 }
 
 #mainNav ul li {
@@ -53,6 +53,15 @@ body {
 
 .logoContainer {
     display: flex;
+}
+
+.logoContainer2 {
+    display: flex;
+}
+
+.logoContainer2 img {
+    margin-left: 200px;
+    width: 300px;
 }
 
 .logo {
@@ -184,7 +193,7 @@ footer p {
     background: #eadea6 !important;
     color: black !important;
     text-align: center;
-    padding: 0.5rem;
+    margin: 10px 10px !important;
 
 }
 
@@ -207,7 +216,7 @@ footer p {
 
 .fruitCard a:hover {
     width: 100%;
-    background: darkgrey;
+    background: black;
     color: white;
     border: none;
 }
@@ -221,4 +230,27 @@ form button {
 
 form button:hover {
     background: lightseagreen !important;
+}
+
+/* ABOUT PAGE */
+
+.about-b img {
+    width: 550px;
+    height: 405px;
+    border: 10px solid black;
+    border-radius: 10px;
+}
+
+.about-a {
+    background: black;
+    color: white;
+    padding: 2rem;
+    border: solid 10px white;
+    border-radius: 10px;
+}
+
+.about-a h3 {
+    text-align: center;
+    font-family: "Slabo 27px";
+
 }
