@@ -305,6 +305,17 @@ form button:hover {
 
 }
 
+.about-c {
+    border: 10px solid black;
+    height: 406px;
+    background: white;
+    border-radius: 10px;
+
+}
+
+
+
+
 
 
 /* MEDIA QUERIES */
