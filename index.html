@@ -13,10 +13,11 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script src="https://kit.fontawesome.com/af356b6923.js" crossorigin="anonymous"></script>
+
     <title>Max's Fruit Shop</title>
 </head>
 
-<body>
+<body onload="myLoad()">
 
     <!-- MAIN HEADER AND NAVBAR -->
 
@@ -32,15 +33,21 @@
                 <img src="IMG/fruitLogo.png" alt="">
             </div>
             <ul>
-                <li><a class="current" href="index.html">HOME</a></li>
-                <li><a href="fruits.html">FRUITS</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-6 col-sm-2">
+                        <li><a class="current" href="index.html">HOME</a></li>
+                        <li><a href="fruits.html">FRUITS</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                        <li><a href="cart.html">VIEW CART <i class="fas fa-shopping-cart"></i></a></li>
+                    </div>
+                </div>
+
+
             </ul>
 
         </nav>
-
-
 
 
         <div class="container-bg">
@@ -51,22 +58,18 @@
 
 
 
+
             </div>
+
+
 
         </div>
 
 
 
 
-        <!-- <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div> -->
+
+
 
 
         </div>
@@ -74,6 +77,8 @@
 
 
     <!-- FOOTER SECTION-->
+    <!-- 
+    made using icons from font awesome -->
 
     <footer id="mainFooter">
         <div class="container-fluid">
@@ -99,8 +104,9 @@
 
         <p>Copyright &copy; 2019 Max's Fruit Shop. All Rights Reserved.</p>
     </footer>
-
-
+    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </body>
 
 </html>

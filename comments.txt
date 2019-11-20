@@ -1,0 +1,3 @@
+-i cannot get the html values from the correct elements for the info for the fruit items
+
+-the row is not inserting i cannot get the table insert variable to work

@@ -13,7 +13,6 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script src="https://kit.fontawesome.com/af356b6923.js" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
     <title>Max's Fruit Shop</title>
 </head>
 
@@ -35,13 +34,16 @@
                 <li><a href="fruits.html">FRUITS</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="cart.html">VIEW CART <i class="fas fa-shopping-cart"></i></a></li>
             </ul>
 
         </nav>
 
+
+
         <!-- ITEMS FOR SALE SECTION -->
 
-        <body>
+        <body onload="myLoad()">
             <section id="fruits">
                 <div class="container">
 
@@ -60,8 +62,8 @@
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Raspberries</h5>
-                                    <p class="card-text">R25/Kg</p>
-                                    <a href="contact.html" class="btn btn-primary">Order</a>
+                                    <p class="card-text">R<span class="fruitPrice">25</span> /Kg</p>
+                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -81,8 +83,8 @@
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Lemons</h5>
-                                    <p class="card-text">R35/Kg</p>
-                                    <a href="contact.html" class="btn btn-primary">Order</a>
+                                    <p class="card-text">R<span class="fruitPrice">35</span>/Kg</p>
+                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -102,8 +104,10 @@
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Apricots</h5>
-                                    <p class="card-text">R35/Kg</p>
-                                    <a href="contact.html" class="btn btn-primary">Order</a>
+                                    <p class="card-text">R<span class="fruitPrice">35</span> /Kg</p>
+                                    <a onclick="addItem(),incrementCart(),getFruitInfo(event)"
+                                        class="btn btn-primary">Add
+                                        To Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -121,8 +125,8 @@
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Oranges</h5>
-                                    <p class="card-text">R25/Kg</p>
-                                    <a href="contact.html" class="btn btn-primary">Order</a>
+                                    <p class="card-text">R<span class="fruitPrice">25</span>/Kg</p>
+                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -146,8 +150,8 @@
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Apples</h5>
-                                    <p class="card-text">R45/Kg</p>
-                                    <a href="contact.html" class="btn btn-primary">Order</a>
+                                    <p class="card-text">R<span class="fruitPrice">45</span>/Kg</p>
+                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -165,8 +169,8 @@
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Peaches</h5>
-                                    <p class="card-text">R35/Kg</p>
-                                    <a href="contact.html" class="btn btn-primary">Order</a>
+                                    <p class="card-text">R<span class="fruitPrice">35</span>/Kg</p>
+                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -186,8 +190,8 @@
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Litchis</h5>
-                                    <p class="card-text">R40/Kg</p>
-                                    <a href="contact.html" class="btn btn-primary">Order</a>
+                                    <p class="card-text">R<span class="fruitPrice">40</span>/Kg</p>
+                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -203,8 +207,8 @@
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Mangoes</h5>
-                                    <p class="card-text">R15/Kg</p>
-                                    <a href="contact.html" class="btn btn-primary">Order</a>
+                                    <p class="card-text">R<span class="fruitPrice">15</span>/Kg</p>
+                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -229,8 +233,8 @@
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Watermelons</h5>
-                                    <p class="card-text">R55/Kg</p>
-                                    <a href="contact.html" class="btn btn-primary">Order</a>
+                                    <p class="card-text">R<span class="fruitPrice"></span>55/Kg</p>
+                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -248,8 +252,8 @@
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Kiwis</h5>
-                                    <p class="card-text">R35/Kg</p>
-                                    <a href="contact.html" class="btn btn-primary">Order</a>
+                                    <p class="card-text">R<span class="fruitPrice">35</span>/Kg</p>
+                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -266,8 +270,8 @@
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Bananas</h5>
-                                    <p class="card-text">R30/Kg</p>
-                                    <a href="contact.html" class="btn btn-primary">Order</a>
+                                    <p class="card-text">R<span class="fruitPrice">30</span>/Kg</p>
+                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -284,8 +288,8 @@
 
                                 <div class="card-body">
                                     <h5 class="card-title">Carrots</h5>
-                                    <p class="card-text">R25/Kg</p>
-                                    <a href="contact.html" class="btn btn-primary">Order</a>
+                                    <p class="card-text">R<span class="fruitPrice">25</span>/Kg</p>
+                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -295,34 +299,41 @@
                 </div>
 
             </section>
+            <script src="main.js"></script>
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 
-        </body>
+    </header>
 
 
-        <!-- FOOTER SECTION-->
+    <!-- FOOTER SECTION-->
 
 
-        <footer id="mainFooter">
-            <div class="container-fluid">
-                <div class="footerItems">
-                    <div>
-                        <h1>Best Quality</h1>
-                        <i class="fas fa-thumbs-up  fa-4x"></i>
+    <footer id="mainFooter">
+        <div class="container-fluid">
+            <div class="footerItems">
+                <div>
+                    <h1>Best Quality</h1>
+                    <i class="fas fa-thumbs-up  fa-4x"></i>
 
-                    </div>
-                    <div>
-                        <h1>Finest Service</h1>
-                        <i class="fas fa-thumbs-up fa-4x"></i>
+                </div>
+                <div>
+                    <h1>Finest Service</h1>
+                    <i class="fas fa-thumbs-up fa-4x"></i>
 
-                    </div>
-                    <div>
-                        <h1>Healthiest Fruits</h1>
-                        <i class="fas fa-thumbs-up fa-4x"></i>
+                </div>
+                <div>
+                    <h1>Healthiest Fruits</h1>
+                    <i class="fas fa-thumbs-up fa-4x"></i>
 
-                    </div>
                 </div>
             </div>
+        </div>
 
-            <p>Copyright &copy; 2019 Max's Fruit Shop. All Rights Reserved.</p>
-        </footer>
+        <p>Copyright &copy; 2019 Max's Fruit Shop. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>

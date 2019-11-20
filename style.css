@@ -6,7 +6,7 @@
 
 body {
     background: rgb(212, 192, 154);
-    max-width: 2000px;
+
 }
 
 
@@ -26,14 +26,14 @@ body {
 }
 
 #mainNav ul li {
-    padding: 0 44px;
+    padding: 0 20px;
     list-style: none;
     justify-self: center;
 }
 
 #mainNav ul li a {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 2rem;
+    font-size: 1rem;
     color: black;
     text-decoration: none;
     font-family: "mclaren";
@@ -184,6 +184,7 @@ body {
 #mainFooter {
     height: 300px;
     background: #e3b04b;
+
 }
 
 .footerItems {
@@ -197,6 +198,7 @@ body {
     align-self: center;
     justify-self: center;
     justify-content: center;
+
 
 }
 
@@ -267,7 +269,7 @@ footer p {
 .fruitCard a:hover {
     width: 100%;
     background: black;
-    color: white;
+    color: white !important;
     border: none;
 }
 
@@ -277,6 +279,7 @@ form button {
     width: 100%;
 
 }
+
 
 form button:hover {
     background: lightseagreen !important;
@@ -299,6 +302,17 @@ form button:hover {
     border-radius: 10px;
 }
 
+.about-a p {
+    text-align: center;
+}
+
+.about-a p a {
+    color: blue;
+
+    font-size: 1.5rem;
+
+}
+
 .about-a h3 {
     text-align: center;
     font-family: "Slabo 27px";
@@ -313,15 +327,19 @@ form button:hover {
 
 }
 
+/* CART PAGE */
+
+.shopHead {
+    background: lightgrey !important;
+    color: black;
+}
 
 
+#tableInsert i {
+    color: red;
+    transition: all 0.5s;
+}
 
-
-
-/* MEDIA QUERIES */
-
-@media(max-width:1287) {
-    #navBar ul {
-        display: grid;
-    }
+#tableInsert i:hover {
+    transform: scale(1.3);
 }
