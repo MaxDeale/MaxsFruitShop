@@ -34,10 +34,77 @@
                 <li><a href="fruits.html">FRUITS</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="cart.html">VIEW CART <i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="#cartSection">VIEW CART <i class="fas fa-shopping-cart"></i></a></li>
             </ul>
 
         </nav>
+        <!-- CART SECTION -->
+
+        <section id="cartSection">
+
+            <div class="jumbotron shopHead">
+                <h1>Shopping Cart</h1>
+
+                <div class=" container">
+                    <table class="table table-hover cartTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Item</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Shipping Method</th>
+                                <th scope="col">Coupon</th>
+                                <th scope="col">Remove Item</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableInsert">
+
+                            <!-- <tr>
+                                <th scope="row">1</th>
+                                <td>Box of apples</td>
+                                <td>15</td>
+                                <td>Express</td>
+                                <td>No</td>
+                                <td><i onclick="removeItem()" class="fas fa-times"></i></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Box of bananas</td>
+                                <td>18</td>
+                                <td>Overnight</td>
+                                <td>Yes</td>
+                                <td><i onclick="removeItem()" class="fas fa-times"></i></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Box of oranges</td>
+                                <td>18</td>
+                                <td>Overnight</td>
+                                <td>No</td>
+                                <td><i onclick="removeItem()" class="fas fa-times"></i></td>
+                            </tr> -->
+
+                        </tbody>
+
+                        <h2>TOTAL: R <span class="totalDisplay"></span>
+                        </h2>
+
+                    </table>
+
+                    <form style="display: flex;">
+
+
+
+
+                        <button type="submit" onclick="checkout()" class="btn btn-primary">Checkout</button>
+                    </form>
+
+
+                </div>
+
+            </div>
+        </section>
+
 
 
 
@@ -63,7 +130,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Raspberries</h5>
                                     <p class="card-text">R<span class="fruitPrice">25</span> /Kg</p>
-                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
+                                    <a onclick="addItem(),incrementCart(),updateTotal()" class="btn btn-primary">Add To
+                                        Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -84,7 +152,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Lemons</h5>
                                     <p class="card-text">R<span class="fruitPrice">35</span>/Kg</p>
-                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
+                                    <a onclick="addItem(),incrementCart(),updateTotal()" class="btn btn-primary">Add To
+                                        Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -105,8 +174,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Apricots</h5>
                                     <p class="card-text">R<span class="fruitPrice">35</span> /Kg</p>
-                                    <a onclick="addItem(),incrementCart(),getFruitInfo(event)"
-                                        class="btn btn-primary">Add
+                                    <a onclick="addItem(),incrementCart(),updateTotal()" class="btn btn-primary">Add
                                         To Cart</a>
                                 </div>
                             </div>
@@ -126,7 +194,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Oranges</h5>
                                     <p class="card-text">R<span class="fruitPrice">25</span>/Kg</p>
-                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
+                                    <a onclick="addItem(),incrementCart(),updateTotal()" class="btn btn-primary">Add To
+                                        Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +220,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Apples</h5>
                                     <p class="card-text">R<span class="fruitPrice">45</span>/Kg</p>
-                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
+                                    <a onclick="addItem(),incrementCart(),updateTotal()" class="btn btn-primary">Add To
+                                        Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -170,7 +240,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Peaches</h5>
                                     <p class="card-text">R<span class="fruitPrice">35</span>/Kg</p>
-                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
+                                    <a onclick="addItem(),incrementCart(),updateTotal()" class="btn btn-primary">Add To
+                                        Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -191,7 +262,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Litchis</h5>
                                     <p class="card-text">R<span class="fruitPrice">40</span>/Kg</p>
-                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
+                                    <a onclick="addItem(),incrementCart(),updateTotal()" class="btn btn-primary">Add To
+                                        Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -208,7 +280,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Mangoes</h5>
                                     <p class="card-text">R<span class="fruitPrice">15</span>/Kg</p>
-                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
+                                    <a onclick="addItem(),incrementCart(),updateTotal()" class="btn btn-primary">Add To
+                                        Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -234,7 +307,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Watermelons</h5>
                                     <p class="card-text">R<span class="fruitPrice">55</span>/Kg</p>
-                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
+                                    <a onclick="addItem(),incrementCart(),updateTotal()" class="btn btn-primary">Add To
+                                        Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -253,7 +327,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Kiwis</h5>
                                     <p class="card-text">R<span class="fruitPrice">35</span>/Kg</p>
-                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
+                                    <a onclick="addItem(),incrementCart(),updateTotal()" class="btn btn-primary">Add To
+                                        Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -271,7 +346,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Bananas</h5>
                                     <p class="card-text">R<span class="fruitPrice">30</span>/Kg</p>
-                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
+                                    <a onclick="addItem(),incrementCart(),updateTotal()" class="btn btn-primary">Add To
+                                        Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -289,7 +365,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Carrots</h5>
                                     <p class="card-text">R<span class="fruitPrice">25</span>/Kg</p>
-                                    <a onclick="addItem(),incrementCart()" class="btn btn-primary">Add To Cart</a>
+                                    <a onclick="addItem(),incrementCart(),updateTotal()" class="btn btn-primary">Add To
+                                        Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -300,11 +377,13 @@
 
             </section>
             <script src="main.js"></script>
-            <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.4.1.js"
+                integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
 
     </header>
+
+
 
 
     <!-- FOOTER SECTION-->

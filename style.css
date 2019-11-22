@@ -334,6 +334,11 @@ form button:hover {
     color: black;
 }
 
+.shopHead h1 {
+    font-family: "Slabo 27px" !important;
+    letter-spacing: 3px;
+    color: lightseagreen;
+}
 
 #tableInsert i {
     color: red;
@@ -344,7 +349,7 @@ form button:hover {
     transform: scale(1.3);
 }
 
-.totalDisplay{
+.totalDisplay {
     color: green;
     text-decoration: none;
 }
