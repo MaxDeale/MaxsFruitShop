@@ -40,26 +40,44 @@ function decrementCart() {
     cartCount--;
   }
 }
+// RESET INFO
+
+function resetInfo() {
+  fruitinfo = [];
+  firstinfos = [];
+}
 
 // ADD TO CART
 let newInfo;
 let fruitinfo = [];
 let itemName;
 let itemPrice;
+let firstinfos = [];
+let buttonCLicked;
 
 function addItem() {
+  incrementCart();
+  updateTotal();
+
   // GET INFO FUNCTION
   // Code to add event listeners to all of the "add to cart" buttons to get the correct information about the specific fruit clicked on
+
   this.getinfo = function() {
     let buttons = [document.querySelectorAll(".btn-primary")];
+
     buttons.forEach(function() {
       this.addEventListener("click", function(event) {
-        let buttonCLicked = event.target;
+        buttonCLicked = event.target;
         itemName =
           buttonCLicked.parentElement.firstChild.nextElementSibling.innerHTML;
         itemPrice =
           buttonCLicked.parentElement.firstChild.nextElementSibling
             .nextElementSibling.firstChild.nextElementSibling.innerHTML;
+
+        firstinfos.push(itemName);
+        firstinfos.push(itemPrice);
+
+        // console.log(firstinfos);
       });
     });
 
@@ -86,8 +104,9 @@ function addItem() {
     } else {
       delivery = "no delivery";
     }
+    // console.log(fruitinfo);
 
-    newInfo = new fruit(itemName, itemPrice, delivery, useCoupon);
+    newInfo = new fruit(firstinfos[0], firstinfos[1], delivery, useCoupon);
 
     fruitinfo.push(newInfo.fruitName);
     fruitinfo.push(newInfo.fruitPrice);
@@ -115,14 +134,14 @@ function addItem() {
   console.log(fruitinfo);
 
   // add the item price to the total amount
-  total = total + fruitinfo[1];
+  // total = total + fruitinfo[1];
 
   sessionStorage.setItem("totals", total);
 
   // display a new row on bootstrap table for new shopping item
 
   var table = document.getElementById("tableInsert");
-  table.innerHTML +=
+  let tablecontents =
     "<tr><th scope= " +
     "'row'>" +
     cartCount +
@@ -139,39 +158,53 @@ function addItem() {
     "  <td>" +
     fruitinfo[3] +
     "</td>" +
-    " <td><i onclick = 'removeItem(),updateTotal()' class = 'fas fa-times'> </i></td > " +
+    " <td><i onclick = 'removeItem()' class = 'fas fa-times'> </i></td > " +
     "</tr>";
+
+  table.innerHTML += tablecontents;
+
+  resetInfo();
+  // console.log(cartItems);
 }
 
 // UPDATE TOTAL CART AMOUNT
 
 function updateTotal() {
+  // reset the amount shown in the total
   let totalShow = document.querySelector(".totalDisplay");
+
+  total = total - Number(totalShow.innerHTML);
+
   totalShow.innerHTML = total;
 }
 
 // REMOVE ITEM
-function removeItem() {
-  // remove that item (object) from session storage
-  let removeButtons = document.querySelectorAll(".fa-times");
-  removeButtons.forEach(function(e) {
-    this.addEventListener("click", function() {
-      let del = e.target;
-      let delprice = del.previousSibling.previousSibling;
-    });
-  });
+function removeItem(e) {
+  // take the price of the deleted item and detract from total
+  let buttonCLicked = e.target;
+  let delPrice =
+    buttonCLicked.previousSibling.previousSibling.previousSibling.innerHTML;
+  total = total - delPrice;
+
   // remove the row from the bootstrap table
   let cartRowAdd = document.getElementById("tableInsert");
-  cartRowAdd.removeChild(cartRowAdd.lastChild);
+
+  cartRowAdd.removeChild(cartRowAdd.firstChild);
 
   decrementCart();
+  updateTotal();
 }
 
 // CHECKOUT
 
 function checkout() {
   sessionStorage.setItem("totals", total);
-  alert("Thank you, your order has been processed. Your Total is R" + total);
+  alert(
+    "Thank you, your order has been processed. Your Total is R" +
+      total +
+      ". Invoice Number:" +
+      ID()
+  );
 }
 
 // GENERATE RANDOM ID FOR CHECKOUT
@@ -180,7 +213,7 @@ let idString;
 
 function ID() {
   idString =
-    "_" +
+    "INV" +
     Math.random()
       .toString(36)
       .substr(2, 9);
@@ -189,18 +222,41 @@ function ID() {
 
 // JQUERY
 
-// $(document).ready(function() {
-//   $("body").on("load", function() {
-//     $("#main-nav").animate({ height: "200px" }, "slow");
+$(document).ready(function() {
+  $("#main-nav").animate(
+    {
+      height: "200px"
+    },
+    "slow"
+  );
 
-//     $(".card").animate(
-//       {
-//         opacity: 0.5
-//       },
-//       "slow"
-//     );
-//   });
-// });
+  $(".btn-dark").on("click", function() {
+    ".popup".fadeToggle("slow");
+  });
+
+  $(".card")
+    .animate(
+      {
+        height: "100px"
+      },
+      "slow"
+    )
+    .animate(
+      {
+        height: "450px"
+      },
+      "slow"
+    );
+
+  $(".logo").on("mouseover", function() {
+    "logo".animate(
+      {
+        right: "500px"
+      },
+      "slow"
+    );
+  });
+});
 
 // When the user clicks on <div>, open the popup
 function popUp() {

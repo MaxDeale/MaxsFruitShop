@@ -1,8 +1,8 @@
 
 - data persistence is a problem with local storage so far, as i need to get the cart row from the cart page, and add fruits from he fruit page, etc...
 
--need to store correct total in shop cart page total
+- getting NaN for total and undefined for name and price on the first time add to cart is clicked.
 
--need to fade in more info buttons with jquery
+-as a result of this i cannot add the current fruit price to the total when adding to cart
 
-- getting NaN for total and undefined for name and price.
+-the remove function is returning null for the price element for some reason.
