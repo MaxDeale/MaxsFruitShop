@@ -1,8 +1,4 @@
 
-- data persistence is a problem with local storage so far, as i need to get the cart row from the cart page, and add fruits from he fruit page, etc...
-
 - getting NaN for total and undefined for name and price on the first time add to cart is clicked.
 
--as a result of this i cannot add the current fruit price to the total when adding to cart
-
--the remove function is returning null for the price element for some reason.
+-as a result of this i cannot add the current fruit price to the total when adding to cart or get the total to display properly

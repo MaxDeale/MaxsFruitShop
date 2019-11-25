@@ -33,7 +33,11 @@ function incrementCart() {
 }
 
 // DECREMENT COUNT
-function decrementCart() {
+function decrementCart0(ev) {
+  ev.preventDefualt();
+  let clickedRemove = ev.target
+  let cartAmount = clickedRemove.previousSibling.previousSibling.previousSibling.innerHTML;
+  cartCount = cartAmount - cartCount;
   if ((cartCount = 0)) {
     cartCount = cartCount;
   } else {
@@ -62,17 +66,17 @@ function addItem() {
   // GET INFO FUNCTION
   // Code to add event listeners to all of the "add to cart" buttons to get the correct information about the specific fruit clicked on
 
-  this.getinfo = function() {
+  this.getinfo = function () {
     let buttons = [document.querySelectorAll(".btn-primary")];
 
-    buttons.forEach(function() {
-      this.addEventListener("click", function(event) {
-        buttonCLicked = event.target;
+    buttons.forEach(function () {
+      this.addEventListener("click", function (ev) {
+        buttonCLicked = ev.target;
         itemName =
           buttonCLicked.parentElement.firstChild.nextElementSibling.innerHTML;
         itemPrice =
           buttonCLicked.parentElement.firstChild.nextElementSibling
-            .nextElementSibling.firstChild.nextElementSibling.innerHTML;
+          .nextElementSibling.firstChild.nextElementSibling.innerHTML;
 
         firstinfos.push(itemName);
         firstinfos.push(itemPrice);
@@ -116,8 +120,8 @@ function addItem() {
     // when add to cart is clicked, an alert should display the current total
     alert(
       "Your current total is R" +
-        total +
-        ". Please click on 'View Cart' to see your current cart items."
+      total +
+      ". Please click on 'View Cart' to see your current cart items."
     );
 
     // add the item into session storage
@@ -173,24 +177,27 @@ function updateTotal() {
   // reset the amount shown in the total
   let totalShow = document.querySelector(".totalDisplay");
 
-  total = total - Number(totalShow.innerHTML);
-
   totalShow.innerHTML = total;
 }
 
 // REMOVE ITEM
-function removeItem(e) {
+function removeItem() {
   // take the price of the deleted item and detract from total
-  // let buttonCLicked = e.target;
-  // let delPrice =
-  //   buttonCLicked.previousSibling.previousSibling.previousSibling.innerHTML;
-  // total = total - delPrice;
+
+  // this.getTotalDelete = function (ev) {
+  //   let buttonCLicked = ev.target;
+  //   console.log(buttonCLicked);
+  //   let delPrice =
+  //     buttonCLicked.previousSibling.previousSibling.previousSibling.innerHTML;
+  //   total = total - delPrice;
+  // }
+
 
   // remove the row from the bootstrap table
   let cartRowAdd = document.getElementById("tableInsert");
 
   cartRowAdd.removeChild(cartRowAdd.firstChild);
-
+  getTotalDelete();
   decrementCart();
   updateTotal();
 }
@@ -201,9 +208,9 @@ function checkout() {
   sessionStorage.setItem("totals", total);
   alert(
     "Thank you, your order has been processed. Your Total is R" +
-      total +
-      ". Invoice Number:" +
-      ID()
+    total +
+    ". Invoice Number:" +
+    ID()
   );
 }
 
@@ -215,47 +222,45 @@ function ID() {
   idString =
     "INV" +
     Math.random()
-      .toString(36)
-      .substr(2, 9);
+    .toString(36)
+    .substr(2, 9);
   return idString;
 }
 
 // JQUERY
 
-$(document).ready(function() {
-  $("#main-nav").animate(
-    {
+$(document).ready(function () {
+  $("#main-nav").animate({
       height: "200px"
     },
     "slow"
   );
 
-  $(".btn-dark").on("click", function() {
+  $(".btn-dark").on("click", function () {
     ".popup".fadeToggle("slow");
   });
 
   $(".card")
-    .animate(
-      {
+    .animate({
         height: "100px"
       },
       "slow"
     )
-    .animate(
-      {
+    .animate({
         height: "450px"
       },
       "slow"
     );
 
-  $(".logo").on("mouseover", function() {
-    "logo".animate(
-      {
+  $(".logo").on("mouseover", function () {
+    $("logo").animate({
         right: "500px"
       },
       "slow"
     );
   });
+
+
 });
 
 // When the user clicks on <div>, open the popup
