@@ -181,10 +181,10 @@ function updateTotal() {
 // REMOVE ITEM
 function removeItem(e) {
   // take the price of the deleted item and detract from total
-  let buttonCLicked = e.target;
-  let delPrice =
-    buttonCLicked.previousSibling.previousSibling.previousSibling.innerHTML;
-  total = total - delPrice;
+  // let buttonCLicked = e.target;
+  // let delPrice =
+  //   buttonCLicked.previousSibling.previousSibling.previousSibling.innerHTML;
+  // total = total - delPrice;
 
   // remove the row from the bootstrap table
   let cartRowAdd = document.getElementById("tableInsert");
